@@ -47,8 +47,7 @@ public class Tombola {
 
         // Insert numbers into the list
         for (int i = 0; i < number; i++) {
-            int numeroCasuale = random.nextInt(number);
-            listaNumeri.add(numeroCasuale);
+            listaNumeri.add(i);
         }
 
         // Remove numbers from the list using randomly generated indices
@@ -71,10 +70,10 @@ public class Tombola {
         System.out.print("Numeri estratti - ");
         boolean estrai1 = true;
         boolean estrai2 = true;
-        if(estrai1 = false){
+        if (!estrai1) {
             tombola.estrai();
         }
-        if(estrai2 = false){
+        if (!estrai2) {
             tombola2.estrai2();
         }
     }
