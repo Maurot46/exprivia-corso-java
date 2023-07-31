@@ -22,10 +22,10 @@ public class Pari {
     public static void main(String[] args) {
         Pari p = new Pari();
         p.setNumero(5);
-        if (p.isPari()) {
-            System.out.println("è un numero pari");
+        if (p.isDispari()) {
+            System.out.println(p.getNumero() + " è un numero pari");
         }else {
-            System.out.println("è un numero dispari");
+            System.out.println(p.getNumero() + " è un numero dispari");
         }
     }
 }

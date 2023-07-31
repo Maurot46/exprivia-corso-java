@@ -33,7 +33,6 @@ public class Persona {
         } else {
             this.eta = eta;
         }
-
     }
 
     public static void main(String[] args) {
