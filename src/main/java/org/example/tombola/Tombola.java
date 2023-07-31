@@ -5,36 +5,37 @@ import java.util.*;
 public class Tombola {
     protected int number;
 
+    public Tombola(int number) {
+        this.number = number;
+    }
+
     public void estrai() {
         Random random = new Random();
 
-        //numero massimo estraibile
-        number = 90;
-
-        //aggiungo 0 così non lo estraggo nella tombola
+        // aggiungo 0 così non lo estraggo nella tombola
         int zero = 0;
 
-        //creo la lista di numeri già estratti in un HASHSET che non contiene duplicati
+        // creo la lista di numeri già estratti in un HASHSET che non contiene duplicati
         Set<Integer> numeriEstratti = new HashSet<>();
 
-        //aggiungo 0 per non trovarlo
+        // aggiungo 0 per non trovarlo
         numeriEstratti.add(zero);
 
-        //loop che mi itera tra tutti i 90 numeri
+        // loop che mi itera tra tutti i numeri
         for (int i = 0; i < number; i++) {
 
-            //istanzio il numero random
+            // istanzio il numero random
             int random_number;
 
-            //esgeuo l'estrazione fin quando i numeri non sono presenti nella mia lista
+            // eseguo l'estrazione fin quando i numeri non sono presenti nella mia lista
             do {
                 random_number = random.nextInt(number);
             } while (numeriEstratti.contains(random_number));
 
-            //aggiungo i numeri random alla mia lista
+            // aggiungo i numeri random alla mia lista
             numeriEstratti.add(random_number);
 
-            //stampo in console i numeri non duplicati estratti
+            // stampo in console i numeri non duplicati estratti
             System.out.print(random_number + ",");
 
         }
@@ -43,11 +44,10 @@ public class Tombola {
     public void estrai2() throws InterruptedException {
         List<Integer> listaNumeri = new ArrayList<>();
         Random random = new Random();
-        int numeroMax = 90;
 
-        // Insert 90 random numbers into the list
-        for (int i = 0; i < numeroMax; i++) {
-            int numeroCasuale = random.nextInt(numeroMax);
+        // Insert numbers into the list
+        for (int i = 0; i < number; i++) {
+            int numeroCasuale = random.nextInt(number);
             listaNumeri.add(numeroCasuale);
         }
 
@@ -61,15 +61,21 @@ public class Tombola {
             if (i < size - 1) {
                 System.out.print(" , ");
             }
-            Thread.sleep(100);
+            Thread.sleep(1);
         }
     }
 
-
     public static void main(String[] args) throws InterruptedException {
-        Tombola tombola = new Tombola();
+        Tombola tombola = new Tombola(10);
+        Tombola tombola2 = new Tombola(20);
         System.out.print("Numeri estratti - ");
-        tombola.estrai();
-        tombola.estrai2();
+        boolean estrai1 = true;
+        boolean estrai2 = true;
+        if(estrai1 = false){
+            tombola.estrai();
+        }
+        if(estrai2 = false){
+            tombola2.estrai2();
+        }
     }
 }
