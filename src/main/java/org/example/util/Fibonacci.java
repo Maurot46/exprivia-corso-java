@@ -28,7 +28,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         Fibonacci f = new Fibonacci();
-        final long LIMIT = 42L;
+        final long LIMIT = 0L;
         Timer t = new Timer();
         t.start();
         for (long i = 1; i < LIMIT; i++) {

@@ -1,6 +1,11 @@
 package org.example;
 
 
+import com.google.gson.Gson;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Persona {
     String nome;
@@ -40,6 +45,22 @@ public class Persona {
         p.setNome("Mario");
         p.setCognome("Rossi");
         p.setEta(25);
-        System.out.println(p.getNome() + " " + p.getCognome() + " di " + p.getEta() + " anni");
+        Gson gson = new Gson();
+
+        /*try (FileWriter fileWriter = new FileWriter("person.json")){
+            gson.toJson(p, fileWriter);
+            System.out.println("serializzazione completa");
+        }catch (IOException e){
+            e.printStackTrace();
+        }*/
+        try(FileReader reader = new FileReader("person.json")){
+            Persona p2 = gson.fromJson(reader, Persona.class);
+            System.out.println("Deserializzazione completa");
+            System.out.println("Nome " + p2.getNome());
+            System.out.println("Cognome " + p2.getCognome());
+            System.out.println("Eta " + p2.getEta());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
