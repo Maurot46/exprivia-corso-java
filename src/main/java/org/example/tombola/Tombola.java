@@ -67,14 +67,14 @@ public class Tombola {
     public static void main(String[] args) throws InterruptedException {
         Tombola tombola = new Tombola(10);
         Tombola tombola2 = new Tombola(20);
-        System.out.print("Numeri estratti - ");
+        //System.out.print("Numeri estratti - ");
         boolean estrai1 = true;
         boolean estrai2 = true;
-        if (!estrai1) {
+        /*if (!estrai1) {
             tombola.estrai();
         }
         if (!estrai2) {
             tombola2.estrai2();
-        }
+        }*/
     }
 }
